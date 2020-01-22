@@ -8,7 +8,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   */
 @Component({
   selector: 'app-favorite',
-  templateUrl: './favorite.component.html',
+  /*Two ways of using templates: externally or with the template property
+    Which way you use is up to you
+    Recommend:use external if complex or more than 5 lines
+  */
+  templateUrl: './favorite.component.html', //use if more complex, > 5 lines code
+  //template: '<h1>Hello</h1>',
   styleUrls: ['./favorite.component.css']
   //inputs: ['isFavorite']
 })
@@ -18,7 +23,8 @@ export class FavoriteComponent implements OnInit {
     Adding an alias keeps the contract of our components stable, as when we refactor the variable it doesn't get updated in the HTML
   */
   @Input('is-favorite') isSelected: boolean;
-  @Output() change = new EventEmitter();
+  //Can use alias on input and output to keep our componenets stable
+  @Output('change') click = new EventEmitter();
 
   constructor() { }
 
@@ -31,7 +37,7 @@ export class FavoriteComponent implements OnInit {
     /*Can optionally pass a value: this.change.emit(this.isSelected)
       Value passed in will be available to all subscribers of the change. In thic case: AppComponent
     */
-    this.change.emit({newValue: this.isSelected}); //Use to raise or publish an event, notify others that something happened
+    this.click.emit({newValue: this.isSelected}); //Use to raise or publish an event, notify others that something happened
   }
 }
 export interface FavoriteChangedEventArgs {
