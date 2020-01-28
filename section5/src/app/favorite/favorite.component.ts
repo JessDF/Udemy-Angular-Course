@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 /* Two ways to mark as input property:
    * 1. Use the method when declaring variable: @Input() isFavorite: boolean
         Add Input to import
@@ -14,10 +14,40 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   */
   templateUrl: './favorite.component.html', //use if more complex, > 5 lines code
   //template: '<h1>Hello</h1>',
-  styleUrls: ['./favorite.component.css']
+  /* Why don't the css leak outside of this component
+   * Shadow DOM - Allows us to apply scoped styles to elements without bleeding out to the outer world.
+  */
+  styleUrls: ['./favorite.component.css'],
+  /* ViewEncapsulation - 
+   * Setting: Emulated - we emulate Shadow DOM - default setting
+   *     Angular attaches an attirbute to our components and uses that to apply CSS to our component
+   * Setting: Native - Instead of generating the attributes dynamically, angular uses the native shadow dom in the browser 
+   *     You have to import Bootstrap into the components CSS if you want it to appear when you use this setting
+   *        You wouldn't really want to do this as it'll cause performance issues
+   * Setting: None - we aren't going to have view encapsulation
+   *     Styles in this component will leak outside 
+  */
+  //encapsulation: ViewEncapsulation.Emulated,
+  styles: [`
+    body {
+      background-color: powderblue;
+    }
+    .glyphicon {
+      color: green;
+    }
+    `]
   //inputs: ['isFavorite']
 })
-export class FavoriteComponent implements OnInit {
+/* Three ways to add style to a component:
+ * 1. Using the styleUrls property in the component method data
+ * 2. Using the styles property in the component method
+ *    You can use both 1 and 2
+ * 3. Inline in our HTML file
+ * 
+ * Note - which ever comes last while be the one that applies
+ *  Angular chooses whichever one comes last - glyphicon will be overriden
+*/
+export class FavoriteComponent {
   /*Alias in an Input Method:
     If we don't want to use camel case in HTML we can pass an alias and pass into the Input method
     Adding an alias keeps the contract of our components stable, as when we refactor the variable it doesn't get updated in the HTML
@@ -25,11 +55,6 @@ export class FavoriteComponent implements OnInit {
   @Input('is-favorite') isSelected: boolean;
   //Can use alias on input and output to keep our componenets stable
   @Output('change') click = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   onClick() {
     this.isSelected = !this.isSelected;
