@@ -12,3 +12,21 @@
     [is-favorite]="post.isFavorite" 
     (change)="onFavoriteChanged($event)">
 </app-favorite>
+
+<bootstrap-panel>
+     <!--This code is translated to:
+          <div class="panel-heading">
+            <div class="heading">Heading</div>
+          </div>
+        We don't always want the extra div - would be nicer to just have the one so we can replace the div with ng-container
+        Then Angular will only render the content fo the container and it'll look like this:
+          <div class="panel-heading">
+            "Heading"
+          </div>
+    -->
+    <ng-container class="heading">Heading</ng-container>
+    <div class="body">
+        <h2>Body</h2>
+        <p>Some Content....</p>
+    </div>
+</bootstrap-panel>
