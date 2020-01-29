@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'section6-directives';
+  tweet = {
+    body: '...',
+    likesCount: 10,
+    isLiked: true
+  }
 }
