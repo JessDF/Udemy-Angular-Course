@@ -62,11 +62,11 @@
 
 ## Generating Services using Angular CLI
 - Using a terminal window: `ng g s <new_service_name>`
--- G = generate
--- S = service
--- i.e. `ng g s email`
+	- G = generate
+	- S = service
+	- i.e. `ng g s email`
 
 ## Installing Bootstrap
 - Using a terminal window: `npm install bootstrap --save`
--- Downloads bootstrap and stores in node_modules
--- `--save` adds it as a dependency in package.json
+	- Downloads bootstrap and stores in node_modules
+	- `--save` adds it as a dependency in package.json
