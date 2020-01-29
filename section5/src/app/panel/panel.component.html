@@ -4,15 +4,15 @@
   Note: you don't need a selector if you have only 1 ng-content
 -->
 
-<div class="panel panel-default">
-  <div class="panel-heading">
+<div class="card">
+  <div class="card-header">
     <!-- 
       If in the consumer of panel component we have an element that matches this selector (heading class) that element will be placed here
         ng-content will be re-placed with that element
     -->
     <ng-content select=".heading"></ng-content>
   </div>
-  <div class="panel-body">
+  <div class="card-body">
     <ng-content select=".body"></ng-content>
   </div>
 </div>
