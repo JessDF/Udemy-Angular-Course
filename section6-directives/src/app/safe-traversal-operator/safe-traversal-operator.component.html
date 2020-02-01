@@ -1,0 +1,11 @@
+<!--Safe Traversal Operator - 
+    Scenario: <span>{{task.assignee.name}}</span> 
+        -- and name is null
+This causes an error in the console. There are two ways to handle it:
+-->
+<span *ngIf="task.assignee">{{task.assignee.name}}</span>
+
+<!--If we want to keep object in the DOM, we can use Safe Traversal Operator
+- If element is null, then will be ignored
+-->
+<span>{{task.assignee?.name}}</span>
