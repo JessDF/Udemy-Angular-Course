@@ -33,5 +33,22 @@
 <hr><h3>3. *ngSwitchCase</h3>
 <app-ng-switch-case></app-ng-switch-case>
 
-<hr><h3>4. ngFor</h3>
+<hr><h3>4. ngFor, Change Detection, and Trackby</h3>
 <app-ng-for></app-ng-for>
+
+<hr><h3>5. The Leading Asterisk</h3>
+<p>1. When angular sees the leading *, it is telling angular to rewrite the block using the ng-template </p>
+<p>2. Going to use "*ngIf" to bind the ng-template</p>
+<p>3. Lesson: when we use leading * with structural directives, angular is going to rewrite the block using a ng-template</p>
+<div *ngIf="courses.length > 0; else noCourses">
+  List of courses
+</div>
+<!--Verses-->
+<ng-template [ngIf]="courses.length > 0">
+  <div>List of courses...</div>
+</ng-template>
+<ng-template [ngIf]="!(courses.length > 0)">
+  No Courses
+</ng-template>
+
+<hr><h3>6. ngClass</h3>
