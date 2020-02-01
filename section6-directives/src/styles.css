@@ -4,5 +4,11 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
 
 body {
+    font-size: large;
+    padding: 10px;
+}
+
+h3 {
+    color: brown;
     font-size: x-large;
 }

@@ -1,10 +1,23 @@
+
 <!--
-    "index" is an exported value of ngFor
-    Other exported values - https://angular.io/api/common/NgForOf#local-variables
+    Everytime button is clicked angular is reconstructing this ul element:
+    <button (click)="loadCourses()">Load Courses</button>
 -->
+<button (click)="loadCourses()">Load Courses</button>
+
 <button (click)="onAdd()">Add</button>
 <ul>
-    <li *ngFor="let course of courses; index as i; even as isEven">
+    <!--
+        "index" is an exported value of ngFor
+        Other exported values - https://angular.io/api/common/NgForOf#local-variables
+        <li *ngFor="let course of courses; index as i; even as isEven">
+    -->
+    <!--We can track DOM elements a couple different ways.
+        * instead of tracking with memory location, we want to track by their id not their identity
+        * that way angluar won't re-render the DOM element if you haven't changed the element at all
+        * <li *ngFor="let course of courses; trackBy: trackCourse">
+    -->
+    <li *ngFor="let course of courses; index as i; even as isEven; trackBy: trackCourse">
         {{ i }} - {{course.name}} <span *ngIf="isEven">(EVEN)</span>
         <button (click)="onRemove(course)">Remove</button>
         <button (click)="changeName(course)">Change</button>
