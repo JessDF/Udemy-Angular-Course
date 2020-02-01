@@ -3,8 +3,8 @@
   [likesCount]="tweet.likesCount"
   [isActive]="tweet.isLiked"
 ></like>
-<hr>
-<h2>Directives</h2>
+
+<hr><h2>Directives</h2>
 <h3>1. *ngIf</h3>
 <!--If any courses want to render, else display message no courses yet
   To do this we will use ng-if directive
@@ -20,7 +20,7 @@
   No courses available yet
 </ng-template>
 
-<h3>2. Hidden Property</h3>
+<hr><h3>2. Hidden Property</h3>
 <!--If using a large tree with many DOM elements, better to use *ngIf
   B/c both elements below are rendered by the DOM and would decrease performance
   Note - there are some exceptions:
@@ -30,8 +30,8 @@
 <div [hidden]="courses.length == 0">List of courses...</div>
 <div [hidden]="courses.length > 0">No courses...</div>
 
-<h3>3. *ngSwitchCase</h3>
-<!--
-  
--->
+<hr><h3>3. *ngSwitchCase</h3>
 <app-ng-switch-case></app-ng-switch-case>
+
+<hr><h3>4. ngFor</h3>
+<app-ng-for></app-ng-for>

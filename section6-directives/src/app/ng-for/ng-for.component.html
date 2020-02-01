@@ -1,0 +1,12 @@
+<!--
+    "index" is an exported value of ngFor
+    Other exported values - https://angular.io/api/common/NgForOf#local-variables
+-->
+<button (click)="onAdd()">Add</button>
+<ul>
+    <li *ngFor="let course of courses; index as i; even as isEven">
+        {{ i }} - {{course.name}} <span *ngIf="isEven">(EVEN)</span>
+        <button (click)="onRemove(course)">Remove</button>
+        <button (click)="changeName(course)">Change</button>
+    </li>
+</ul>
