@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ng-style.component.css']
 })
 export class NgStyleComponent {
+  canSave = true;
 }

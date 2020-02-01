@@ -1,1 +1,23 @@
-<p>ng-style works!</p>
+<!-- ngStyle
+When we have an object with multiple style bindings:
+    <button
+        [style.backgroundColor]="canSave ? 'blue': 'gray'"
+        [style.color]="canSave ? 'white' : 'black'"
+        [style.fontWeight]="'canSave' ? 'bold' : 'normal'"
+    >
+        Save
+    </button>
+When dealing with multiple style bindings, we can use ngStyle directive to clean up code
+Best way to implement this feature would be encapsulating them in a css class and depending on the value of canSave, implement the appropriate class
+    - though there may be a scenario you want to do this.
+-->
+<button
+    [ngStyle]="{
+        'backgroundColor': canSave ? 'blue': 'gray',
+        'color': canSave ? 'white' : 'black',
+        'fontWeight': canSave ? 'bold' : 'normal'
+    }"
+    (click)="canSave = !canSave"
+>
+    {{canSave}}
+</button>
