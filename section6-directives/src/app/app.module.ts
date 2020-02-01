@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LikeComponent } from './like/like.component';
+import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LikeComponent
+    LikeComponent,
+    NgSwitchCaseComponent
   ],
   imports: [
     BrowserModule
