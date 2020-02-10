@@ -8,6 +8,8 @@ import { NgForComponent } from './ng-for/ng-for.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { SafeTraversalOperatorComponent } from './safe-traversal-operator/safe-traversal-operator.component';
+import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { SafeTraversalOperatorComponent } from './safe-traversal-operator/safe-t
     NgForComponent,
     NgClassComponent,
     NgStyleComponent,
-    SafeTraversalOperatorComponent
+    SafeTraversalOperatorComponent,
+    CustomDirectivesComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule
