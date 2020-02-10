@@ -70,3 +70,9 @@
 - Using a terminal window: `npm install bootstrap --save`
 	- Downloads bootstrap and stores in node_modules
 	- `--save` adds it as a dependency in package.json
+
+## Generating Custom Directives using Angular CLI
+- Using a terminal window: `ng g d <new_directive_name>`
+	- G = generate
+	- d = directive
+	- i.e. `ng g d input-format`
