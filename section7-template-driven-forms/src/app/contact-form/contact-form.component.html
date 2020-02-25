@@ -40,5 +40,24 @@
         <label for="comment">Comment</label>
         <textarea ngModel name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
     </div>
+
+    <div class="checkbox">
+        <label for="">
+            <input type="checkbox" ngModel name="isSubscribed"> Subscribe to mailing list
+        </label>
+    </div>
+
+    <div class='form-group'>
+        <label for="contactMethod">Contact Method</label>
+        <!-- Add the word multiple before ngModel to allow users to select more than one option -->
+        <select multiple ngModel name="contactMethod" id="contactMethod" class="form-control">
+            <option value=""></option>
+            <!-- if want to send object to server use: [ngValue]="method" instead of [value]="method.id"-->
+            <option *ngFor="let method of contactMethods" [value]="method.id">{{method.name}}</option>
+        </select>
+    </div>     
+
+    <p>{{f.value | json}}</p> <!-- can use to diagnose code -->
+
     <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>    
 </form>
